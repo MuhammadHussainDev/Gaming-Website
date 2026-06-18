@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top 10 Popular Games</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+    .card:hover { transform: translateY(-6px); }
+    .star { color: #facc15; }
+    .star-empty { color: #4b5563; }
+    .gradient-text { background: linear-gradient(135deg, #a855f7, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-gradient { background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); }
+    .card-gradient { background: linear-gradient(145deg, #1e1b2e, #151228); }
+    .glass { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+    .badge { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 0.75rem; font-weight: 600; background: rgba(168,85,247,0.2); color: #c084fc; }
+    .badge-platform { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 0.7rem; font-weight: 500; background: rgba(255,255,255,0.08); color: #d1d5db; border: 1px solid rgba(255,255,255,0.06); }
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-in { animation: fadeInUp 0.5s ease forwards; opacity: 0; }
+  </style>
+</head>
+<body class="bg-[#0a0820] text-gray-200 min-h-screen">
+
+  <!-- Hero -->
+  <header class="hero-gradient relative overflow-hidden">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-40"></div>
+    <div class="relative max-w-6xl mx-auto px-6 py-20 md:py-28 text-center">
+      <p class="text-purple-400 font-semibold text-sm md:text-base uppercase tracking-widest mb-4">Gaming Hall of Fame</p>
+      <h1 class="text-4xl md:text-6xl font-extrabold mb-4">
+        <span class="gradient-text">Top 10 Popular Games</span>
+      </h1>
+      <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+        Discover the most iconic and beloved video games of all time — from timeless classics to modern masterpieces.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <a href="#games" class="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-500 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-200 shadow-lg shadow-purple-600/30">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          Explore Games
+        </a>
+        <a href="#footer" class="inline-flex items-center gap-2 glass text-gray-300 hover:text-white px-6 py-3 rounded-xl font-semibold transition-all duration-200">
+          About This Page
+        </a>
+      </div>
+    </div>
+    <div class="absolute -bottom-1 left-0 right-0 h-16 bg-gradient-to-t from-[#0a0820] to-transparent"></div>
+  </header>
+
+  <!-- Games Section -->
+  <section id="games" class="max-w-7xl mx-auto px-6 py-16">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-3">The <span class="text-purple-400">Legends</span></h2>
+      <p class="text-gray-500 max-w-xl mx-auto">Each game on this list has left an unforgettable mark on the industry and millions of players worldwide.</p>
+    </div>
+
+    <div id="gameGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+
+    <!-- Stats summary -->
+    <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto text-center">
+      <div class="glass rounded-2xl py-6 px-4">
+        <p class="text-3xl font-bold text-purple-400">10</p>
+        <p class="text-gray-500 text-sm mt-1">Games Listed</p>
+      </div>
+      <div class="glass rounded-2xl py-6 px-4">
+        <p class="text-3xl font-bold text-purple-400">5</p>
+        <p class="text-gray-500 text-sm mt-1">Genres</p>
+      </div>
+      <div class="glass rounded-2xl py-6 px-4">
+        <p class="text-3xl font-bold text-purple-400">2010s</p>
+        <p class="text-gray-500 text-sm mt-1">Golden Era</p>
+      </div>
+      <div class="glass rounded-2xl py-6 px-4">
+        <p class="text-3xl font-bold text-purple-400">4.4</p>
+        <p class="text-gray-500 text-sm mt-1">Avg Rating</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer" class="border-t border-gray-800/60 py-10 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+      <p>&copy; 2025 Gaming Hub. All game names and images are property of their respective owners.</p>
+      <p class="flex items-center gap-2">
+        Made with
+        <span class="text-red-500">&hearts;</span>
+        for gamers everywhere
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const games = [
+      {
+        name: "Minecraft",
+        tagline: "Build, Explore, Survive",
+        description: "A sandbox phenomenon where players explore a blocky procedurally-generated world, gather resources, craft tools, and build anything imaginable. With multiple game modes and endless modding, it's the best-selling game of all time.",
+        genre: "Sandbox, Survival",
+        year: 2011,
+        rating: 4.5,
+        platforms: ["PC", "PlayStation", "Xbox", "Switch", "Mobile"],
+        color: "from-green-600 to-emerald-900",
+        icon: "⛏️",
+        link: "https://www.minecraft.net"
+      },
+      {
+        name: "Fortnite",
+        tagline: "Drop In, Victory Out",
+        description: "A cultural phenomenon blending battle royale combat with building mechanics. Regular updates, live concerts, and crossover events keep millions of players coming back. Free-to-play with vibrant cartoon-style graphics.",
+        genre: "Battle Royale, Shooter",
+        year: 2017,
+        rating: 4.0,
+        platforms: ["PC", "PlayStation", "Xbox", "Switch", "Mobile"],
+        color: "from-purple-600 to-pink-700",
+        icon: "🔫",
+        link: "https://www.fortnite.com"
+      },
+      {
+        name: "Grand Theft Auto V",
+        tagline: "Crime Never Looked So Good",
+        description: "Rockstar's open-world masterpiece set in the sprawling city of Los Santos. Follow three criminals across an epic story, then take the chaos online in GTA Online, one of the most successful multiplayer experiences ever.",
+        genre: "Action-Adventure, Open World",
+        year: 2013,
+        rating: 4.5,
+        platforms: ["PC", "PlayStation", "Xbox"],
+        color: "from-blue-700 to-cyan-800",
+        icon: "🚗",
+        link: "https://www.rockstargames.com/V"
+      },
+      {
+        name: "The Legend of Zelda: Breath of the Wild",
+        tagline: "Freedom Awaits",
+        description: "A revolutionary open-air adventure that redefined the Zelda franchise. Explore the vast kingdom of Hyrule, solve ingenious shrines, and battle towering bosses. Every mountain is climbable, every secret discoverable.",
+        genre: "Action-Adventure, RPG",
+        year: 2017,
+        rating: 5.0,
+        platforms: ["Switch", "Wii U"],
+        color: "from-teal-600 to-green-700",
+        icon: "🗡️",
+        link: "https://www.zelda.com/breath-of-the-wild"
+      },
+      {
+        name: "Elden Ring",
+        tagline: "The Rune of Greatness",
+        description: "FromSoftware's magnum opus combining the punishing Soulsborne formula with a breathtaking open world. Co-written by George R.R. Martin, its lore, boss design, and sense of discovery are unparalleled in modern gaming.",
+        genre: "Action RPG, Open World",
+        year: 2022,
+        rating: 4.5,
+        platforms: ["PC", "PlayStation", "Xbox"],
+        color: "from-amber-700 to-yellow-900",
+        icon: "⚔️",
+        link: "https://en.bandainamcoent.eu/elden-ring"
+      },
+      {
+        name: "The Witcher 3: Wild Hunt",
+        tagline: "The Witcher's Final Chapter",
+        description: "CD Projekt Red's sprawling RPG epic following Geralt of Rivia on a quest through a morally complex fantasy world. Renowned for its deep storytelling, rich side quests, and two massive expansions that rival full games.",
+        genre: "Action RPG, Open World",
+        year: 2015,
+        rating: 4.5,
+        platforms: ["PC", "PlayStation", "Xbox", "Switch"],
+        color: "from-red-800 to-stone-900",
+        icon: "🐺",
+        link: "https://www.thewitcher.com/witcher3"
+      },
+      {
+        name: "Red Dead Redemption 2",
+        tagline: "The Wild West Lives",
+        description: "A stunning prequel following Arthur Morgan and the Van der Linde gang. Rockstar delivered an unprecedented level of detail in its living, breathing open world. The story, characters, and atmosphere make it a true work of art.",
+        genre: "Action-Adventure, Western",
+        year: 2018,
+        rating: 4.5,
+        platforms: ["PC", "PlayStation", "Xbox"],
+        color: "from-orange-800 to-red-900",
+        icon: "🤠",
+        link: "https://www.rockstargames.com/reddeadredemption2"
+      },
+      {
+        name: "Valorant",
+        tagline: "Aim. Shoot. Adapt.",
+        description: "Riot Games' tactical 5v5 character-based shooter blending precise gunplay with unique agent abilities. Inspired by Counter-Strike but with distinct heroes, it quickly became a staple of competitive FPS esports worldwide.",
+        genre: "Tactical Shooter, FPS",
+        year: 2020,
+        rating: 4.0,
+        platforms: ["PC"],
+        color: "from-red-600 to-orange-700",
+        icon: "🎯",
+        link: "https://playvalorant.com"
+      },
+      {
+        name: "God of War (2018)",
+        tagline: "Father. Son. Legend.",
+        description: "A bold reinvention of the God of War series, trading Greek mythology for Norse. Follow Kratos and his son Atreus on an emotional journey through the Nine Realms. The Leviathan Axe is one of gaming's most satisfying weapons.",
+        genre: "Action-Adventure, Mythology",
+        year: 2018,
+        rating: 4.5,
+        platforms: ["PC", "PlayStation"],
+        color: "from-sky-700 to-blue-900",
+        icon: "🪓",
+        link: "https://www.playstation.com/god-of-war"
+      },
+      {
+        name: "Cyberpunk 2077",
+        tagline: "Wake Up, Samurai",
+        description: "CD Projekt Red's ambitious open-world RPG set in the neon-drenched dystopia of Night City. Despite a rocky launch, constant updates and the Phantom Liberty expansion transformed it into a deeply immersive sci-fi experience.",
+        genre: "Open World, RPG",
+        year: 2020,
+        rating: 4.0,
+        platforms: ["PC", "PlayStation", "Xbox"],
+        color: "from-yellow-500 to-orange-600",
+        icon: "💀",
+        link: "https://www.cyberpunk.net"
+      }
+    ];
+
+    function renderStars(rating) {
+      let html = '';
+      for (let i = 1; i <= 5; i++) {
+        if (i <= Math.floor(rating)) {
+          html += '<span class="star text-lg">&#9733;</span>';
+        } else if (i === Math.ceil(rating) && rating % 1 !== 0) {
+          html += '<span class="star text-lg" style="position:relative;display:inline-block;">' +
+            '<span style="position:absolute;overflow:hidden;width:50%;">&#9733;</span>' +
+            '<span class="star-empty">&#9733;</span></span>';
+        } else {
+          html += '<span class="star-empty text-lg">&#9733;</span>';
+        }
+      }
+      return html;
+    }
+
+    function renderGames() {
+      const grid = document.getElementById('gameGrid');
+      grid.innerHTML = '';
+      games.forEach((game, index) => {
+        const card = document.createElement('div');
+        card.className = 'card card-gradient rounded-2xl overflow-hidden border border-gray-800/50 shadow-xl transition-all duration-300 cursor-pointer animate-in';
+        card.style.animationDelay = `${index * 0.08}s`;
+        card.innerHTML = `
+          <div class="h-44 bg-gradient-to-br ${game.color} flex items-center justify-center relative">
+            <span class="text-7xl opacity-80">${game.icon}</span>
+            <div class="absolute top-3 right-3">
+              <span class="badge">${game.year}</span>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#151228] to-transparent"></div>
+          </div>
+          <div class="p-5">
+            <h3 class="text-xl font-bold text-white mb-1">${game.name}</h3>
+            <p class="text-gray-500 text-xs italic mb-3">${game.tagline}</p>
+            <p class="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-3">${game.description}</p>
+            <div class="flex items-center gap-2 mb-3">
+              ${renderStars(game.rating)}
+              <span class="text-sm font-semibold text-gray-300 ml-1">${game.rating.toFixed(1)}</span>
+            </div>
+            <div class="mb-2">
+              <span class="badge-platform">${game.genre}</span>
+            </div>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              ${game.platforms.map(p => `<span class="badge-platform">${p}</span>`).join('')}
+            </div>
+            <a href="${game.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-semibold text-purple-400 hover:text-purple-300 transition-colors">
+              Learn More
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    renderGames();
+  </script>
+</body>
+</html>
